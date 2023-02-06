@@ -4,10 +4,12 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import com.example.cats.BaseFragment
+import com.example.cats.base.BaseFragment
 import com.example.cats.databinding.FragmentFirstBinding
 import com.example.cats.navigator.Navigator
+import dagger.hilt.android.AndroidEntryPoint
 
+@AndroidEntryPoint
 class FirstFragment : BaseFragment() {
 
     private var _binding: FragmentFirstBinding? = null

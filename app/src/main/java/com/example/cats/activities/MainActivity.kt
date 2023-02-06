@@ -2,13 +2,15 @@ package com.example.cats.activities
 
 import android.os.Bundle
 import androidx.activity.OnBackPressedCallback
-import androidx.appcompat.app.AppCompatActivity
 import androidx.navigation.fragment.NavHostFragment
 import com.example.cats.R
+import com.example.cats.base.BaseActivity
 import com.example.cats.databinding.ActivityMainBinding
 import com.example.cats.navigator.Navigator
+import dagger.hilt.android.AndroidEntryPoint
 
-class MainActivity : AppCompatActivity() {
+@AndroidEntryPoint
+class MainActivity : BaseActivity() {
     private lateinit var binding: ActivityMainBinding
 
     private val mainActivityBackPressedCallback = object: OnBackPressedCallback(true) {
@@ -57,6 +59,5 @@ class MainActivity : AppCompatActivity() {
 
         super.onDestroy()
     }
-
 
 }

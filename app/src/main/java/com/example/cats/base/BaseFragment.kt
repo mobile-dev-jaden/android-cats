@@ -1,4 +1,4 @@
-package com.example.cats
+package com.example.cats.base
 
 import androidx.fragment.app.Fragment
 
