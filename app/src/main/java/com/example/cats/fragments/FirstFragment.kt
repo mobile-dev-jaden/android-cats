@@ -4,6 +4,7 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.fragment.app.viewModels
 import com.example.cats.base.BaseFragment
 import com.example.cats.databinding.FragmentFirstBinding
 import com.example.cats.navigator.Navigator
@@ -14,6 +15,8 @@ class FirstFragment : BaseFragment() {
 
     private var _binding: FragmentFirstBinding? = null
     private val binding get() = _binding!!
+
+    private val viewModel : FirstViewModel by viewModels()
 
     override fun onCreateView(
         inflater: LayoutInflater,

@@ -1,0 +1,62 @@
+plugins {
+    id 'com.android.library'
+    id 'org.jetbrains.kotlin.android'
+}
+
+android {
+    namespace 'net.hicare.practice.sample.data'
+    compileSdk 33
+
+    defaultConfig {
+        minSdk 24
+        targetSdk 33
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+        consumerProguardFiles "consumer-rules.pro"
+
+        buildConfigField "String", "X_API_KEY", '"68f4ff84-3023-43f2-8283-0a9fdeb17009"'
+        buildConfigField "String", "BASE_URL", '"https://api.thecatapi.com/v1/"'
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+    kotlinOptions {
+        jvmTarget = '1.8'
+    }
+}
+
+dependencies {
+    // coroutine
+    def coroutine_ver = "1.6.4"
+    implementation "org.jetbrains.kotlinx:kotlinx-coroutines-android:$coroutine_ver"
+
+    // Retrofit
+    def retrofit2_ver = "2.9.0"
+    implementation "com.squareup.retrofit2:retrofit:2.$retrofit2_ver"
+    implementation "com.squareup.retrofit2:converter-gson:$retrofit2_ver"
+    implementation "com.squareup.retrofit2:converter-scalars:$retrofit2_ver"
+    implementation "com.google.code.gson:gson:$retrofit2_ver"
+
+    // Okhttp3
+    def ok_http3_ver = "4.10.0"
+    implementation "com.squareup.okhttp3:okhttp:$ok_http3_ver"
+    implementation "com.squareup.okhttp3:logging-interceptor:$ok_http3_ver"
+    implementation "com.squareup.okhttp3:okhttp-urlconnection:$ok_http3_ver"
+
+    // Stetho
+    def stetho_ok_http_ver = "1.6.0"
+    implementation "com.facebook.stetho:stetho-okhttp3:$stetho_ok_http_ver"
+
+    // unit tests
+    testImplementation 'junit:junit:4.13.2'
+    androidTestImplementation 'androidx.test.ext:junit:1.1.5'
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.5.1'
+}

@@ -26,4 +26,7 @@ class Navigator private constructor() {
     fun navToSecondFragment() {
         navController.navigate(R.id.action_global_SecondFragment)
     }
+
+    private fun getCurrentFragmentId(): Int? =
+        navController.currentDestination?.id
 }
