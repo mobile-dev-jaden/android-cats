@@ -1,5 +1,6 @@
 package com.example.cats.navigator
 
+import androidx.annotation.IdRes
 import androidx.navigation.NavController
 import com.example.cats.R
 
@@ -19,6 +20,10 @@ class Navigator private constructor() {
         this.navController = navController
     }
 
+    fun navToHomeFragment() {
+        navController.navigate(R.id.action_global_HomeFragment)
+    }
+
     fun navToFirstFragment() {
         navController.navigate(R.id.action_global_FirstFragment)
     }
@@ -26,6 +31,9 @@ class Navigator private constructor() {
     fun navToSecondFragment() {
         navController.navigate(R.id.action_global_SecondFragment)
     }
+
+    fun isAtFragment(@IdRes fragmentId: Int) =
+        getCurrentFragmentId() == fragmentId
 
     private fun getCurrentFragmentId(): Int? =
         navController.currentDestination?.id
