@@ -46,10 +46,9 @@ android {
 dependencies {
     // Base
     implementation "androidx.core:core-ktx:1.9.0"
-    implementation "androidx.appcompat:appcompat:1.6.0"
+    implementation "androidx.appcompat:appcompat:1.6.1"
     implementation "com.google.android.material:material:1.8.0"
     implementation "androidx.constraintlayout:constraintlayout:2.1.4"
-    implementation project(path: ':data')
 
     // Navigation
     def navigation_ver = "2.5.3"
@@ -91,6 +90,8 @@ dependencies {
     androidTestImplementation "androidx.compose.ui:ui-test-junit4:$test_tools_ver"
     debugImplementation "androidx.compose.ui:ui-tooling:$test_tools_ver"
     debugImplementation "androidx.compose.ui:ui-test-manifest:$test_tools_ver"
+
+    implementation project(path: ':data')
 }
 
 kapt {
