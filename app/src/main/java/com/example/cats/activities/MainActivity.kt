@@ -39,13 +39,13 @@ class MainActivity : BaseActivity() {
        binding.bottomNavigator.setOnItemSelectedListener { item ->
            when (item.itemId) {
                R.id.page_1 -> {
-                   Navigator.get().navToFirstFragment()
-                   true
+                   Navigator.get().navToHomeFragment()
+                   Navigator.get().isAtFragment(R.id.HomeFragment)
                }
 
                R.id.page_2 -> {
                    Navigator.get().navToSecondFragment()
-                   true
+                   Navigator.get().isAtFragment(R.id.SecondFragment)
                }
 
                else -> { false }
